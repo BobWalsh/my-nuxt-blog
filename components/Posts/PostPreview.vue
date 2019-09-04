@@ -1,48 +1,44 @@
 <template>
-  <div class="homepage">
-    <section class="intro">
-      <h1 class>Get tech news!</h1>
-    </section>
-    <section class="featured-posts">
-      <PostPreview
-        id="1"
-        thumbnail="https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/08/02/Pictures/_ad7aa0ac-7789-11e7-b40f-35ec362abc1c.jpg"
-        title="hello there"
-        previewText="this is my first post"
-      />
-      <PostPreview
-        id="2"
-        thumbnail="https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/08/02/Pictures/_ad7aa0ac-7789-11e7-b40f-35ec362abc1c.jpg"
-        title="hello there from 2"
-        previewText="this is my first post"
-      />
-      <PostPreview
-        id="3"
-        thumbnail="https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/08/02/Pictures/_ad7aa0ac-7789-11e7-b40f-35ec362abc1c.jpg"
-        title="hello there from 3"
-        previewText="this is my first post"
-      />
-    </section>
-  </div>
+  <nuxt-link :to="'/posts/'+ id" class="post-preview">
+    <article>
+      <div class="post-thumbnail" :style="{backgroundImage: 'url(' + thumbnail +')'}"></div>
+      <div class="post-content">
+        <h1>{{ title}}</h1>
+        <p>{{ previewText }}</p>
+      </div>
+    </article>
+  </nuxt-link>
 </template>
 
 <script>
-import PostPreview from "@/components/Posts/PostPreview";
-
 export default {
-  components: {
-    PostPreview
+  name: "PostPreview",
+  props: {
+    id: {
+      type: String,
+      required: true
+    },
+    title: {
+      type: String,
+      required: true
+    },
+    previewText: {
+      type: String,
+      required: true
+    },
+    thumbnail: {
+      type: String,
+      required: true
+    }
   }
 };
 </script>
-
 <style scoped>
 .intro {
   height: 300px;
   position: relative;
   padding: 30px;
   box-sizing: border-box;
-  background-image: url("~assets/images/main-page-background.jpg");
   background-position: center;
   background-size: cover;
 }
