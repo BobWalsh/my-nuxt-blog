@@ -3,21 +3,21 @@
     <section class="post">
       <h1 class="post-title">Title of the Post</h1>
       <div class="post-details">
-        <div class="post-details">Last updated on xxx</div>
-        <div class="post-details">Written by Name</div>
+        <div class="post-detail">Last updated on XXX</div>
+        <div class="post-detail">Written by NAME</div>
       </div>
-      <p class="post-content">content of the post</p>
+      <p class="post-content">Content of the post</p>
     </section>
     <section class="post-feedback">
       <p>
-        feedback here to
-        <a href="bob.walsh@47hats.com">me</a>
+        Let me know what you think about the post, send a mail to
+        <a href="mailto:feedback@my-awesome-domain.com">feedback@my-awesome-domain.com</a>.
       </p>
     </section>
   </div>
 </template>
 
-<style  scoped>
+<style scoped>
 .single-post-page {
   padding: 30px;
   text-align: center;
@@ -70,3 +70,4 @@
   color: salmon;
 }
 </style>
+

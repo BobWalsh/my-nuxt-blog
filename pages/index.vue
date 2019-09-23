@@ -1,40 +1,22 @@
 <template>
-  <div class="homepage">
+  <div class="home-page">
     <section class="intro">
-      <h1 class>Get tech news!</h1>
+      <h1>Get the latest tech news!</h1>
     </section>
-    <section class="featured-posts">
-      <PostPreview
-        id="1"
-        thumbnail="https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/08/02/Pictures/_ad7aa0ac-7789-11e7-b40f-35ec362abc1c.jpg"
-        title="hello there"
-        previewText="this is my first post"
-      />
-      <PostPreview
-        id="2"
-        thumbnail="https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/08/02/Pictures/_ad7aa0ac-7789-11e7-b40f-35ec362abc1c.jpg"
-        title="hello there from 2"
-        previewText="this is my first post"
-      />
-      <PostPreview
-        id="3"
-        thumbnail="https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/08/02/Pictures/_ad7aa0ac-7789-11e7-b40f-35ec362abc1c.jpg"
-        title="hello there from 3"
-        previewText="this is my first post"
-      />
-    </section>
+    <PostList />
   </div>
 </template>
 
 <script>
-import PostPreview from "@/components/Posts/PostPreview";
+import PostList from "@/components/Posts/PostList";
 
 export default {
   components: {
-    PostPreview
+    PostList
   }
 };
 </script>
+
 
 <style scoped>
 .intro {
@@ -75,41 +57,5 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-
-.post-preview {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: white;
-  width: 90%;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-@media (min-width: 850px) {
-  .post-preview {
-    width: 400px;
-    margin: 10px;
-  }
-}
-
-.post-thumbnail {
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
-.post-content {
-  padding: 10px;
-  text-align: center;
-}
-
-a:hover .post-content,
-a:active .post-content {
-  background-color: #ccc;
 }
 </style>
